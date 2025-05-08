@@ -46,13 +46,14 @@ class Pipeline:
         self.embeddings = GigaChatEmbeddings(
             credentials=os.getenv("GIGACHAT_API_KEY"),
             scope=os.getenv("GIGACHAT_SCOPE", "GIGACHAT_API_PERS"),
+            #model='Embeddings',
             verify_ssl_certs=False
         )
 
         self.llm = GigaChat(
             credentials=os.getenv("GIGACHAT_API_KEY"),
             scope=os.getenv("GIGACHAT_SCOPE", "GIGACHAT_API_PERS"),
-            model=os.getenv("GIGACHAT_MODEL", "GigaChat"),
+            #model=os.getenv("GIGACHAT_MODEL", "GigaChat"),
             verify_ssl_certs=False,
             temperature=0.7
         )
